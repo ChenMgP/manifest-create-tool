@@ -16,17 +16,13 @@ public class Img {
         }
     }
 
+    /*
+    The newWrite method equals write method
+    I just want to make the code beautiful
+    */
     public void newWrite(OutputStream stream) {
         try {
             write(stream);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void close() {
-        try {
-            appUrl.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
