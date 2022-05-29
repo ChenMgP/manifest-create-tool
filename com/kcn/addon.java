@@ -39,10 +39,10 @@ public class addon {
         //-------------------------------------------------------------------
         JsonObject header = new JsonObject();
         Scanner sc = new Scanner(System.in);
-        System.out.print("请输入此addon的描述: ");
+        System.out.print("Please enter a description for this addon: ");
         String description = sc.next();
         header.addProperty("description", description);
-        System.out.print("请输入此addon的名字: ");
+        System.out.print("Please enter the name of this addon: ");
         String name = sc.next();
         header.addProperty("name", name);
         header.addProperty("uuid", uid1);
@@ -91,25 +91,25 @@ public class addon {
         object1.add("modules", modules1);
         FileSystemView fsv = FileSystemView.getFileSystemView();
         File com = fsv.getHomeDirectory();
-        File f = new File(com + "\\My Addon");
+        File f = new File(com + "\\"+name);
         f.mkdir();
-        File f1 = new File(com + "\\My Addon\\bp");
+        File f1 = new File(com + "\\"+name+"\\bp");
         f1.mkdir();
-        File f2 = new File(com + "\\My Addon\\rp");
+        File f2 = new File(com + "\\"+name+"\\rp");
         f2.mkdir();
-        File j1 = new File(com + "\\My Addon\\bp\\manifest.json");
+        File j1 = new File(com + "\\"+name+"\\bp\\manifest.json");
         j1.createNewFile();
-        BufferedWriter bw = new BufferedWriter(new FileWriter(com + "\\My Addon\\bp\\manifest.json"));
+        BufferedWriter bw = new BufferedWriter(new FileWriter(com + "\\"+name+"\\bp\\manifest.json"));
         bw.write(object.toString());
         bw.close();
-        File j2 = new File(com + "\\My Addon\\rp\\manifest.json");
+        File j2 = new File(com + "\\"+name+"\\rp\\manifest.json");
         j2.createNewFile();
-        BufferedWriter bw1 = new BufferedWriter(new FileWriter(com + "\\My Addon\\rp\\manifest.json"));
+        BufferedWriter bw1 = new BufferedWriter(new FileWriter(com + "\\"+name+"\\rp\\manifest.json"));
         bw1.write(object1.toString());
         bw1.close();
         Img img = new Img();
-        img.newWrite(new FileOutputStream(com + "\\My Addon\\bp\\pack_icon.png"));
+        img.newWrite(new FileOutputStream(com + "\\"+name+"\\bp\\pack_icon.png"));
         Img img1 = new Img();
-        img1.newWrite(new FileOutputStream(com + "\\My Addon\\rp\\pack_icon.png"));
+        img1.newWrite(new FileOutputStream(com + "\\"+name+"\\rp\\pack_icon.png"));
     }
 }
