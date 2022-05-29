@@ -11,6 +11,19 @@ import java.util.UUID;
 public class addon {
 
     //Notice: Please put the gson-2.8.8 into your External library, or this code will fail
+    /*
+    How to use this tool?
+    One way is to run it in your code editor
+    The another way is to compress it into a jar package and write a xxx.Bat(such as start.bat) file to run it
+    
+    How to write the start.bat?
+    Easy!!!
+    Here this the code:
+    java -jar <your jar file's name>(such as "java -jar tool.jar)
+    pause
+    
+    If you don't want to write this bat file, you can download it at the com/kcn path
+    */
 
     public static void main(String[] args) throws IOException {
         String uid1 = UUID.randomUUID().toString();
