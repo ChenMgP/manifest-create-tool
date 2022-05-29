@@ -94,23 +94,9 @@ public class addon {
         BufferedWriter bw1 = new BufferedWriter(new FileWriter(com + "\\My Addon\\rp\\manifest.json"));
         bw1.write(object1.toString());
         bw1.close();
-        FileInputStream fis1 = new FileInputStream("src/com/kcn/img.png");
-        FileOutputStream fos1 = new FileOutputStream(com + "\\My Addon\\bp\\pack_icon.png");
-        byte[] bys1 = new byte[1024];
-        int len;
-        while ((len=fis1.read(bys1))!=-1) {
-            fos1.write(bys1, 0 , len);
-        }
-        fis1.close();
-        fos1.close();
-        FileInputStream fis2 = new FileInputStream("src/com/kcn/img.png");
-        FileOutputStream fos2 = new FileOutputStream(com + "\\My Addon\\rp\\pack_icon.png");
-        byte[] bys2 = new byte[1024];
-        int len1;
-        while ((len1 = fis2.read(bys2)) != -1) {
-            fos2.write(bys2, 0, len1);
-        }
-        fis2.close();
-        fos2.close();
+        Img img = new Img();
+        img.newWrite(new FileOutputStream(com + "\\My Addon\\bp\\pack_icon.png"));
+        Img img1 = new Img();
+        img1.newWrite(new FileOutputStream(com + "\\My Addon\\rp\\pack_icon.png"));
     }
 }
